@@ -19,6 +19,11 @@ def get_courses():
 def delete_course(course_id):
     repository.execute_query("DELETE FROM courses WHERE id = ?", (course_id,))
 
+    repository.execute_query("DELETE FROM courses WHERE id = ?",
+                             (course_id,)
+                             )
+
+
 def enroll_student(student_id, course_id):
     try:
         repository.execute_query("INSERT INTO enrollments (student_id, course_id) VALUES (?, ?)", (student_id, course_id))

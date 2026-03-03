@@ -34,6 +34,11 @@ def enroll_form():
         student_service.enroll_student(int(s_id), int(c_id))
     return redirect(url_for("index"))
 
+@app.route("/delete_enroll_form/<int:student_id>")
+def delete_enroll_form(student_id):
+    student_service.delete_student(student_id)
+    return redirect(url_for("index"))
+
 @app.route("/delete_student_form/<int:student_id>")
 def delete_student_form(student_id):
     student_service.delete_student(student_id)
