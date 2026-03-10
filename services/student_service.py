@@ -8,6 +8,10 @@ def get_students():
     return repository.fetch_query("SELECT * FROM students")
 
 def delete_student(student_id):
+    # delete enrolments linked to the student
+    repository.execute_query("DELETE FROM enrollments WHERE student_id = ?", (student_id,))
+
+    # delete the student
     repository.execute_query("DELETE FROM students WHERE id = ?", (student_id,))
 
 def add_course(name):
