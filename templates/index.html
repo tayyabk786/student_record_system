@@ -35,7 +35,7 @@
             <h4>Enrollments</h4>
             <table class="table table-white bg-white rounded">
                 <thead class="table-info"><tr><th>Student</th><th>Course</th></tr></thead>
-                 <tbody>{% for e in enrollments %}<tr><td>{{ e.student_name }}</td><td>{{ e.course_name }}</td><td><a href="/delete_course_form/{{ e.id }}" class="btn btn-sm btn-outine-danger">X</a></td></tr>{% endfor %}</tbody>
+                 <tbody>{% for e in enrollments %}<tr><td>{{ e.student_name }}</td><td>{{ e.course_name }}</td><td><a href="/delete_course_form/{{ e.id }}" class="btn btn-sm btn-danger">X</a></td></tr>{% endfor %}</tbody>
             </table>
         </div>
     </div>
